@@ -1,9 +1,12 @@
-$b-height: 640px;
+$b-height: 600px;
 $n-height: 66px;
 
 .list-body h1, h3, p {
   font-family: 'Space Grotesk', sans-serif;
   line-height: 4rem;
+}
+.list-body h3 {
+  color: white;
 }
 
 .movie-banner {
@@ -32,4 +35,8 @@ $n-height: 66px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  h3 {
+    color: blue;
+  }
 }
