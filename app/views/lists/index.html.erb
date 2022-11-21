@@ -1,14 +1,18 @@
-<div class="banner movie-banner">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+<div class="list-body">
+
+  <%= image_tag 'Cinema.jpg', class: 'movie-banner' %>
+
+  <div class="banner-headline">
+    <h1>Here are the Greatest Movies of all time.</h1>
   </div>
-</div>
 
-<div class="container">
+  <div class="container">
 
-<div class="movie-list">
-  <h3>My Lists</h3>
-  <%= link_to "Create a new list", new_list_path, class: "btn btn-flat" %>
-</div>
+    <div class="movie-list">
+      <h3>My Lists</h3>
+      <%= link_to "Create a new list", new_list_path, class: "btn btn-flat" %>
+    </div>
+
+  </div>
 
 </div>
