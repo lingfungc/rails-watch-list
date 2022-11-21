@@ -2,6 +2,9 @@
 
   <h1 class="movie-headline">Create a new movie list</h1>
 
-  <%= simple_form @list do |f| %>
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name, placeholder: 'Hong Kong' %>
+    <%= f.submit class: 'btn btn-flat' %>
+  <% end %>
 
 </div>

@@ -40,3 +40,20 @@ $n-height: 66px;
     color: blue;
   }
 }
+
+.movies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3rem;
+
+  .movie-card {
+    background-size: cover;
+    height: 240px;
+    font-size: 1.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
