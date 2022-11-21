@@ -1,8 +1,9 @@
-$b-height: 720px;
+$b-height: 640px;
 $n-height: 66px;
 
 .list-body h1, h3, p {
   font-family: 'Space Grotesk', sans-serif;
+  line-height: 4rem;
 }
 
 .movie-banner {
@@ -22,4 +23,13 @@ $n-height: 66px;
   h1 {
     margin-top: 4rem;
   }
+}
+
+.movie-list {
+  width: 90%;
+  height: 100px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
