@@ -8,8 +8,17 @@
 
   <div class="container">
 
-    <div class="movie-list">
-      <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-flat" %>
+    <div class="xmovie-list">
+      <%# link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-flat" %>
+    </div>
+
+    <div class="bookmark_form">
+      <h3>Add a new movie</h3>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :movie_id, collection: Movie.all , placeholder: 'Choose a movie' %>
+        <%= f.input :comment, placeholder: 'Amazing action scenes' %>
+        <%= f.submit class: 'btn btn-flat' %>
+      <% end %>
     </div>
 
     <div class="movies">
@@ -27,7 +36,7 @@
               <%= bookmark.movie.overview %>
             </div>
             <div class="movie-bottom">
-              <p><%= bookmark.comment %></p>
+              <p>"" <%= bookmark.comment %></p>
               <%= link_to "Delete",
                   bookmark_path(bookmark),
                   data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this movie?"}
