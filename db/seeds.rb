@@ -22,7 +22,7 @@ movies = JSON.parse(URI.open(url).read)['results']
 
 movies.each do |movie|
   puts "Creating movie #{movie['title']}"
-  base_movie_url = 'https://image.tmdb.org/t/p/w500'
+  base_movie_url = 'https://image.tmdb.org/t/p/w624'
   Movie.create(
     title: movie['title'],
     overview: movie['overview'],
