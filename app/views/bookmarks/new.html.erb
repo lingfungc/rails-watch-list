@@ -1,0 +1,14 @@
+<div class="container">
+
+  <h1 class="movie-headline"><%= @list.name %></h1>
+  <h1 class="movie-headline">Add a new movie</h1>
+
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :movie_id, collection: Movie.all , placeholder: 'Choose a movie' %>
+    <%= f.input :comment, placeholder: 'Amazing action scenes' %>
+    <%= f.submit class: 'btn btn-flat' %>
+  <% end %>
+  <%= link_to "Back to list", list_path(@list), class: 'btn btn-flat' %>
+
+
+</div>

@@ -9,7 +9,7 @@ $n-height: 66px;
   color: white;
 }
 
-.movie-banner {
+.list-banner {
   width: 100%;
   height: $b-height;
   object-fit: cover;
@@ -28,7 +28,7 @@ $n-height: 66px;
   }
 }
 
-.movie-list {
+.list {
   width: 90%;
   height: 100px;
   margin: 2rem auto;
@@ -41,12 +41,12 @@ $n-height: 66px;
   }
 }
 
-.movies {
+.lists {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 3rem;
 
-  .movie-card {
+  .list-card {
     background-size: cover;
     height: 240px;
     font-size: 1.75rem;
