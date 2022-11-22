@@ -12,8 +12,15 @@
       <%# link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-flat" %>
     </div>
 
-    <div class="bookmark_form">
-      <h3>Add a new movie</h3>
+    <div class="bookmark-form">
+      <div class="bookmark-from-delete-list">
+        <h3>Add a new movie</h3>
+        <%= link_to "Delete this list",
+            list_path(@list),
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure wo delete this list?" },
+            class: "btn btn-flat"
+        %>
+      </div>
       <%= simple_form_for [@list, @bookmark] do |f| %>
         <%= f.input :movie_id, collection: Movie.all , placeholder: 'Choose a movie', input_html: {data: {controller: "tom_select"}}, id: "select-movie" %>
         <%= f.input :comment, placeholder: 'Amazing action scenes' %>
