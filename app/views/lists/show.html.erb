@@ -1,6 +1,6 @@
 <div class="movie-body">
 
-  <%= image_tag 'Cinema.jpg', class: 'movie-banner' %>
+  <%= cl_image_tag @list.photo.key, class: 'movie-banner' %>
 
   <div class="banner-headline">
     <h1><%= @list.name %></h1>
