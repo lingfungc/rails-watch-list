@@ -4,9 +4,9 @@ import TomSelect from "tom-select";
 // Connects to data-controller="tom-select"
 export default class extends Controller {
   connect() {
-    console.log('Connect Tom Select');
+    console.log('Connect Tom_Select');
 
-    new TomSelect("#select-movie",{
+    new TomSelect("#selectMovie",{
       create: true,
       sortField: {
         field: "text",
