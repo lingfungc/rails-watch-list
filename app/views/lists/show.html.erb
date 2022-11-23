@@ -1,6 +1,10 @@
 <div class="movie-body">
 
-  <%= cl_image_tag @list.photo.key, class: 'movie-banner' %>
+  <% if @list.photo.attached? %>
+    <%= cl_image_tag @list.photo.key, class: 'movie-banner' %>
+  <% else %>
+    <%= image_tag "Cinema.jpg", class: 'movie-banner' %>
+    <% end %>
 
   <div class="banner-headline">
     <h1><%= @list.name %></h1>
