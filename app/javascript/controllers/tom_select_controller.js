@@ -6,10 +6,12 @@ export default class extends Controller {
   connect() {
     console.log('Connect Tom_Select');
 
-    new TomSelect("#selectMovie",{
+    const el = document.getElementById('bookmark_movie_id');
+
+    new TomSelect(el, {
       create: true,
       sortField: {
-        field: "text",
+        field: "name",
         direction: "asc"
       }
     });
