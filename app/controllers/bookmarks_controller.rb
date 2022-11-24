@@ -16,10 +16,13 @@ class BookmarksController < ApplicationController
       bookmark = Bookmark.new(movie: movie, comment: comment)
       bookmark.list = @list
       bookmark.save
-      @saved = false unless bookmark.save
+      unless bookmark.save
+        @saved = false
+        @error = bookmark.errors.full_messages.last
+      end
     end
     redirect_to list_path(@list)
-    @saved ? flash[:primary] = 'Bookmark(s) saved!' : flash[:danger] = 'Bookmark(s) can\'s be saved!'
+    @saved ? flash[:primary] = 'Bookmark(s) saved!' : flash[:danger] = @error
   end
 
   def destroy
