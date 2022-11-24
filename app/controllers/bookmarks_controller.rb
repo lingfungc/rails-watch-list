@@ -8,6 +8,7 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new
     @list = List.find(params[:list_id])
+    @saved = true
     movie_ids = params[:bookmark][:movie_id].drop(1)
     comment = params[:bookmark][:comment]
     movie_ids.each do |movie_id|
@@ -15,10 +16,10 @@ class BookmarksController < ApplicationController
       bookmark = Bookmark.new(movie: movie, comment: comment)
       bookmark.list = @list
       bookmark.save
+      @saved = false unless bookmark.save
     end
     redirect_to list_path(@list)
-    flash[:primary] = 'Bookmark(s) saved!'
-    flash[:danger] = 'Bookmark(s) can\'s be saved!'
+    @saved ? flash[:primary] = 'Bookmark(s) saved!' : flash[:danger] = 'Bookmark(s) can\'s be saved!'
   end
 
   def destroy
