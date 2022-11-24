@@ -15,11 +15,11 @@ class BookmarksController < ApplicationController
       bookmark.list = @list
       bookmark.save
       unless bookmark.save
-        flash.alert = 'Sorry, we are not able to save bookmark.'
+        # flash.alert = 'Sorry, we are not able to save bookmark.'
         break
       end
     end
-    redirect_to list_path(@list)
+    redirect_to list_path(@list), notice: 'Saved bookmark(s)'
   end
 
   def destroy
