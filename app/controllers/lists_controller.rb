@@ -2,11 +2,11 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :destroy]
 
   def index
+    @save = true
     @lists = List.all
   end
 
   def show
-    # @save = true
     @bookmark = Bookmark.new
     @review = Review.new
   end
