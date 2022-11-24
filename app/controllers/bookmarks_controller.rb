@@ -5,13 +5,17 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.list = List.find(params[:list_id])
-    if @bookmark.save
-      redirect_to list_path(@bookmark.list)
-    else
-      render :new
+    @list = List.find(params[:list_id])
+    movie_ids = params[:bookmark][:movie_id].drop(1)
+    comment = params[:bookmark][:comment]
+    movie_ids.each do |movie_id|
+      movie = Movie.find(movie_id)
+      bookmark = Bookmark.new(movie: movie, comment: comment)
+      bookmark.list = @list
+      bookmark.save
+      render :new unless bookmark.save
     end
+    redirect_to list_path(@list)
   end
 
   def destroy
