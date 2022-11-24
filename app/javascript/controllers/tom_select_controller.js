@@ -9,11 +9,14 @@ export default class extends Controller {
     const el = document.getElementById('bookmark_movie_id');
 
     new TomSelect(el, {
+      persist: false,
+      createOnBlur: true,
       create: true,
       sortField: {
         field: "name",
-        direction: "asc"
-      }
+        direction: "asc",
+      },
+      maxItems: 3
     });
   }
 }
