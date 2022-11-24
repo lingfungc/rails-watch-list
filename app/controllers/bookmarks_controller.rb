@@ -17,7 +17,7 @@ class BookmarksController < ApplicationController
       bookmark.save
     end
     redirect_to list_path(@list)
-    flash[:message] = 'Bookmark(s) is/are Saved Successfully!'
+    flash[:primary] = 'Bookmark(s) is/are Saved Successfully!'
   end
 
   def destroy
