@@ -5,6 +5,7 @@ class BookmarksController < ApplicationController
   end
 
   def create
+    @bookmark = Bookmark.new
     @list = List.find(params[:list_id])
     movie_ids = params[:bookmark][:movie_id].drop(1)
     comment = params[:bookmark][:comment]
@@ -13,7 +14,10 @@ class BookmarksController < ApplicationController
       bookmark = Bookmark.new(movie: movie, comment: comment)
       bookmark.list = @list
       bookmark.save
-      render :new unless bookmark.save
+      unless bookmark.save
+        flash.alert = 'Sorry, we are not able to save bookmark.'
+        break
+      end
     end
     redirect_to list_path(@list)
   end
