@@ -19,7 +19,8 @@ class BookmarksController < ApplicationController
         break
       end
     end
-    redirect_to list_path(@list), notice: 'Saved bookmark(s)'
+    flash.now[:info] = 'Message sent!'
+    # redirect_to list_path(@list)
   end
 
   def destroy
