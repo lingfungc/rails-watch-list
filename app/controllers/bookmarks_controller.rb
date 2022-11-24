@@ -14,13 +14,9 @@ class BookmarksController < ApplicationController
       bookmark = Bookmark.new(movie: movie, comment: comment)
       bookmark.list = @list
       bookmark.save
-      unless bookmark.save
-        # flash.alert = 'Sorry, we are not able to save bookmark.'
-        break
-      end
+      bookmark.save ? @save = true : false
     end
-    flash.now[:info] = 'Message sent!'
-    # redirect_to list_path(@list)
+    redirect_to list_path(@list)
   end
 
   def destroy
