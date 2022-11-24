@@ -1,6 +1,6 @@
 <div class="movie-body">
 
-  <%= flash[:error] = "Sorry, bookmark(s) cannot be saved." unless @save %>
+  <%= render 'shared/flash' %>
 
   <% if @list.photo.attached? %>
     <%= cl_image_tag @list.photo.key, class: 'movie-banner' %>

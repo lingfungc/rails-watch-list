@@ -1,4 +1,5 @@
 class BookmarksController < ApplicationController
+
   def new
     @bookmark = Bookmark.new
     @list = List.find(params[:list_id])
@@ -14,9 +15,9 @@ class BookmarksController < ApplicationController
       bookmark = Bookmark.new(movie: movie, comment: comment)
       bookmark.list = @list
       bookmark.save
-      bookmark.save ? @save = true : false
     end
     redirect_to list_path(@list)
+    flash[:message] = 'Bookmark(s) is/are Saved Successfully!'
   end
 
   def destroy

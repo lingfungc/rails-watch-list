@@ -2,7 +2,6 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :destroy]
 
   def index
-    @save = true
     @lists = List.all
   end
 
