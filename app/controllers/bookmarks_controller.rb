@@ -18,7 +18,7 @@ class BookmarksController < ApplicationController
       bookmark.save
       unless bookmark.save
         @saved = false
-        @error = bookmark.errors.full_messages.last
+        @error = bookmark.errors.full_messages
       end
     end
     redirect_to list_path(@list)
