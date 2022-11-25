@@ -37,7 +37,7 @@
     </div>
 
     <div class="movies">
-      <% @list.bookmarks.each do |bookmark| %>
+      <% @list.bookmarks.reverse_each do |bookmark| %>
           <div class="movie-card">
             <%= image_tag "#{bookmark.movie.poster_url}" %>
             <div class="movie-info">
@@ -69,7 +69,7 @@
         <% if @list.reviews.empty? %>
           <small><em class="text-muted">Be the first one to review this list</em></small>
         <% end %>
-        <% @list.reviews.each do |review| %>
+        <% @list.reviews.reverse_each do |review| %>
           <div>
             <% review.rating.times do %>
               <i class="fas fa-star star-yellow"></i>
