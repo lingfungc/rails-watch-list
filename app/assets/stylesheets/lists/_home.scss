@@ -1,6 +1,10 @@
 $b-height: 600px;
 $n-height: 66px;
 
+.container {
+  margin-bottom: 100px;
+}
+
 .list-body h1, h3, p {
   font-family: 'Space Grotesk', sans-serif;
   line-height: 4rem;
